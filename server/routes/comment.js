@@ -38,9 +38,9 @@ router.delete('/:id', async (req, res) => {
 })
 
 //Get Comments
-router.get('/post/:postid', async (req, res) => {
+router.get('/post/:postId', async (req, res) => {
     try{
-        const comments = await Comment.find({postId: req.params.postId})
+        const comments = await Comment.find({PostId: req.params.postId})
         res.status(200).json(comments);
     }catch(err){
         res.status(500).json(err);
