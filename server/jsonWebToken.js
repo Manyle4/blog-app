@@ -1,4 +1,5 @@
 const jwt = require('jsonwebtoken');
+const SECRET_KEY = require('./config.js');
 
 const verifyToken = (req, res, next) => {
     const token = req.cookies.token;
