@@ -1,8 +1,19 @@
 import express from 'express'
 import mongoose from 'mongoose'
 import { MONGOURL, PORT } from './config.js'
+const cors = require('cors');
 
 const app = express();
+
+
+//CORS
+const corsOption = {
+    'origin': "*",
+    'credentials': true
+}
+
+app.use(cors(corsOption))
+
 
 //Connecting database
 mongoose.connect("mongodb+srv://yawah:admin@cluster0.qc28s.mongodb.net/")
